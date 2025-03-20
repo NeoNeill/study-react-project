@@ -16,7 +16,7 @@ export const RestaurantsPage = () => {
         }
     };
     return (
-        <div>
+        <>
             {restaurants.map(({ id, name, menu, reviews }) => {
                 return (
                     <div>
@@ -33,6 +33,6 @@ export const RestaurantsPage = () => {
                     </div>
                 );
             })}
-        </div>
+        </>
     );
 };

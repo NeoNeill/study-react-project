@@ -1,4 +1,4 @@
-import { Counter } from "../Counter/Counter";
+import { DishCounter } from "../Dish-counter/Dish-counter";
 
 export const Menu = ({ menu }) => {
     return (
@@ -9,7 +9,7 @@ export const Menu = ({ menu }) => {
                     <li key={menu.id}>{menu.name}</li>
                 ))}
             </ul>
-            <Counter />
+            <DishCounter />
         </>
     );
 };
