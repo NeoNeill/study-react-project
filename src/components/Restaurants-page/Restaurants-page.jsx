@@ -8,14 +8,15 @@ export const RestaurantsPage = () => {
         restaurants[0].id
     );
     const handleSetActiveRestaurant = (restaurantId) => {
-        restaurants.find(({ id }) => {
-            if (id === restaurantId) {
-                setActiveRestaurantId(restaurantId);
-            }
+        const restaurant = restaurants.find(({ id }) => {
+            return id === restaurantId;
         });
+        if (restaurant) {
+            setActiveRestaurantId(restaurantId);
+        }
     };
     return (
-        <>
+        <div>
             {restaurants.map(({ id, name, menu, reviews }) => {
                 return (
                     <div>
@@ -32,6 +33,6 @@ export const RestaurantsPage = () => {
                     </div>
                 );
             })}
-        </>
+        </div>
     );
 };
