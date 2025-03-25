@@ -1,20 +1,22 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 const min = 0;
 const max = 5;
 
 export const useCounter = () => {
     const [value, setValue] = useState(min);
-    const increment = () => {
+    const increment = useCallback(() => {
         if (value < max) {
-            setValue(value + 1);
+            return setValue((count) => Math.min(count + 1));
         }
-    };
-    const decrement = () => {
+    }, [value]);
+    const decrement = useCallback(() => {
         if (value > min) {
-            setValue(value - 1);
+            return setValue((count) => Math.max(count - 1));
         }
-    };
+    }, [value]);
+    console.log(value);
+
     return {
         value,
         increment,
