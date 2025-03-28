@@ -1,0 +1,20 @@
+.root {
+    border: none;
+    cursor: pointer;
+}
+
+.size500 {
+    font-size: 18px;
+
+}
+.size400 {
+    font-size: 16px;
+}
+
+.dark {
+    background: black;
+}
+
+.light {
+    background: white;
+}

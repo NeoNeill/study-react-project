@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Restaurant } from "../Restaurant/Restaurant.jsx";
 import { restaurants } from "../../materials/mock.js";
 import { Tab } from "../Tab/Tab.jsx";
+import styles from "./Restaurants-page.module.css";
 
 export const RestaurantsPage = () => {
     const [activeRestaurantId, setActiveRestaurantId] = useState(
@@ -16,7 +17,7 @@ export const RestaurantsPage = () => {
         }
     };
     return (
-        <>
+        <div className={styles.restaurant}>
             {restaurants.map(({ id, name, menu, reviews }) => {
                 return (
                     <div>
@@ -33,6 +34,6 @@ export const RestaurantsPage = () => {
                     </div>
                 );
             })}
-        </>
+        </div>
     );
 };
