@@ -1,7 +1,22 @@
+.root {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    height: 70px;
+    padding: 10px 15px;
+    background-color: #F2E9E4;
+    box-shadow: 0 2px 6px  #736B65;
+}
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
-    padding: 10px 15px;
+    width: 150px;
+}
+.logo {
+    height: 50px;
+}
+.userSection {
+    display: flex;
 }

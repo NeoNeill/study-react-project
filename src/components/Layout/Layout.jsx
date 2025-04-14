@@ -1,3 +1,5 @@
+import { Footer } from "../Footer/Footer";
+import { Header } from "../Header/Header";
 import { PropgressBar } from "../Propgress-bar/Propgress-bar";
 import styles from "./Layout.module.css";
 
@@ -7,7 +9,6 @@ export const Layout = ({ children }) => {
             <PropgressBar />
             <Header />
             <section className={styles.main}>{children}</section>
-
             <Footer />
         </div>
     );

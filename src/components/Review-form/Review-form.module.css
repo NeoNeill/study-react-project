@@ -1,0 +1,56 @@
+.form {
+    display: flex;
+    flex-direction: column;
+
+    height: 40%;
+    border-radius: 6px;
+    box-sizing: border-box;
+    padding: 10px 25px;
+    background-color: #BFBCBA;
+}
+.name {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.name input {
+    width: 80%;
+    height: 100%;
+    border-radius: 6px;
+    font-size: 16px;
+    border: none;
+}
+.text {
+    display: flex;
+    justify-content: space-between;
+    height: 130px;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+.text textarea {
+    width: 80%;
+    height: 100%;
+    border-radius: 6px;
+    font-size: 16px;
+    border: none;
+    resize: none;
+}
+.counter {
+    height: 30px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+.star {
+    height: 20px;
+    margin-right: 10px;
+}
+.button {
+    display: flex;
+    justify-content: center;
+   
+}

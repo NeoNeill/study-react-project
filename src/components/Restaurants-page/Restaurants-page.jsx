@@ -20,7 +20,7 @@ export const RestaurantsPage = () => {
         <div className={styles.restaurant}>
             {restaurants.map(({ id, name, menu, reviews }) => {
                 return (
-                    <div>
+                    <div className={styles.main}>
                         <Tab
                             key={id}
                             title={name}

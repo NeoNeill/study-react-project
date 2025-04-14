@@ -3,13 +3,7 @@ import styles from "./Button.module.css";
 import { ThemeContext } from "../Theme-context/Theme-context";
 import { use } from "react";
 
-export const Button = ({
-    title,
-    onClick,
-    disabled,
-    className,
-    size = "500",
-}) => {
+export const Button = ({ title, onClick, disabled, className, size }) => {
     const { theme } = use(ThemeContext);
     return (
         <button
@@ -18,6 +12,7 @@ export const Button = ({
             className={classNames(styles.root, className, {
                 [styles.size500]: size === "500",
                 [styles.size400]: size === "400",
+                [styles.size600]: size === "600",
                 [styles.dark]: theme === "dark",
                 [styles.light]: theme === "light",
             })}

@@ -6,7 +6,6 @@ import styles from "./Auth-button.module.css";
 export const AuthButton = () => {
     const { auth, toggleAuth } = use(AuthContext);
     const { isAuthorized, name } = auth;
-    console.log(auth);
     return (
         <div className={styles.root}>
             {isAuthorized && name && (
@@ -15,6 +14,7 @@ export const AuthButton = () => {
             <Button
                 onClick={toggleAuth}
                 title={isAuthorized ? "Logout" : "Login"}
+                size={"400"}
             />
         </div>
     );

@@ -1,14 +1,16 @@
-import React from "react";
 import { Counter } from "../Counter/Counter";
 import { useForm } from "./use-form";
+import { Button } from "../Button/Button";
+import styles from "./Review-form.module.css";
+import Star from "../../assets/Star.svg";
 
 export const ReviewForm = () => {
     const { form, setName, setText, incrementRating, decrementRating, clear } =
         useForm();
     const { name, text, rating } = form;
     return (
-        <form onSubmit={(e) => e.preventDefault()}>
-            <div>
+        <form onSubmit={(e) => e.preventDefault()} className={styles.form}>
+            <div className={styles.name}>
                 <span>Name</span>
                 <input
                     type="text"
@@ -16,20 +18,25 @@ export const ReviewForm = () => {
                     onChange={(e) => setName(e.target.value)}
                 />
             </div>
-            <div>
+            <div className={styles.text}>
                 <span>Text</span>
-                <input
+                <textarea
                     type="text"
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                 />
             </div>
-            <Counter
-                value={rating}
-                decrement={decrementRating}
-                increment={incrementRating}
-            />
-            <button onClick={clear}>Clear</button>
+            <div className={styles.counter}>
+                <img src={Star} className={styles.star} />
+                <Counter
+                    value={rating}
+                    decrement={decrementRating}
+                    increment={incrementRating}
+                />
+            </div>
+            <div className={styles.button}>
+                <Button onClick={clear} title={"Clear"} size={"400"} />
+            </div>
         </form>
     );
 };

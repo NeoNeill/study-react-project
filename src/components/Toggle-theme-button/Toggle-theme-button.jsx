@@ -8,6 +8,7 @@ export const ToggleThemeButton = () => {
         <Button
             onClick={toggleTheme}
             title={theme === "dark" ? "Switch to light" : "Switch to dark"}
+            size={"400"}
         />
     );
 };
