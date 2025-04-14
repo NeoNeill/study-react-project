@@ -1,7 +1,12 @@
+import { Button } from "../Button/Button";
+
 export const Tab = ({ onClick, isActive, title }) => {
     return (
-        <button disabled={isActive} onClick={onClick}>
-            {title}
-        </button>
+        <Button
+            disabled={isActive}
+            onClick={onClick}
+            title={title}
+            size={"600"}
+        />
     );
 };

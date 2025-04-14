@@ -3,7 +3,7 @@ import { useReducer } from "react";
 const DEFAULT_FORM_VALUE = {
     name: "",
     text: "",
-    rating: "",
+    rating: "5",
 };
 
 const SET_NAME_ACTION = "SET_NAME";

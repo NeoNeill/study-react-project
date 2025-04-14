@@ -1,0 +1,11 @@
+.restaurant {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 50vh;
+}
+.main {
+    width: 25%;
+    height: 100%;
+    box-sizing: border-box;
+}

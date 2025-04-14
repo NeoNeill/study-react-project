@@ -1,30 +1,14 @@
 import { Footer } from "../Footer/Footer";
 import { Header } from "../Header/Header";
 import { PropgressBar } from "../Propgress-bar/Propgress-bar";
+import styles from "./Layout.module.css";
 
 export const Layout = ({ children }) => {
     return (
-        <div>
+        <div className={styles.root}>
             <PropgressBar />
             <Header />
-            <section style={{ display: "flex", flexDirection: "row" }}>
-                {children}
-            </section>
-            <section style={{ display: "flex", flexDirection: "row" }}>
-                {children}
-            </section>
-            <section style={{ display: "flex", flexDirection: "row" }}>
-                {children}
-            </section>
-            <section style={{ display: "flex", flexDirection: "row" }}>
-                {children}
-            </section>
-            <section style={{ display: "flex", flexDirection: "row" }}>
-                {children}
-            </section>
-            <section style={{ display: "flex", flexDirection: "row" }}>
-                {children}
-            </section>
+            <section className={styles.main}>{children}</section>
             <Footer />
         </div>
     );
