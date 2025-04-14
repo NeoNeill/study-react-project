@@ -2,7 +2,7 @@ import { Counter } from "../Counter/Counter";
 import { useForm } from "./use-form";
 import { Button } from "../Button/Button";
 import styles from "./Review-form.module.css";
-import Star from "../../assets/Star.svg";
+import star from "../../assets/Star.svg";
 
 export const ReviewForm = () => {
     const { form, setName, setText, incrementRating, decrementRating, clear } =
@@ -27,7 +27,7 @@ export const ReviewForm = () => {
                 />
             </div>
             <div className={styles.counter}>
-                <img src={Star} className={styles.star} />
+                <img src={star} className={styles.star} />
                 <Counter
                     value={rating}
                     decrement={decrementRating}
