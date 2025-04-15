@@ -5,9 +5,9 @@ export const Reviews = ({ reviews }) => {
         <>
             <h3>Reviews</h3>
             <ul className={styles.reviews}>
-                {reviews.map((reviews) => (
+                {reviews.map((reviewsId) => (
                     <li
-                        key={reviews.id}
+                        key={reviewsId}
                     >{`${reviews.user}: ${reviews.text}`}</li>
                 ))}
             </ul>
