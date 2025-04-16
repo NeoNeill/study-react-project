@@ -10,9 +10,7 @@ export const Layout = ({ children }) => {
             <PropgressBar />
             <Header />
             <section className={styles.main}>{children}</section>
-
             <CartContainer />
-
             <Footer />
         </div>
     );

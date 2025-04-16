@@ -11,18 +11,19 @@ export const RestaurantsPage = () => {
         restaurantsIds[0]
     );
     const handleSetActiveRestaurant = (restaurantId) => {
-        const restaurant = restaurants.find(({ id }) => {
+        const restaurant = restaurantsIds.find((id) => {
             return id === restaurantId;
         });
         if (restaurant) {
             setActiveRestaurantId(restaurantId);
         }
     };
+
     return (
         <div className={styles.restaurant}>
             {restaurantsIds.map((id) => {
                 return (
-                    <div className={styles.main}>
+                    <div className={styles.main} key={id}>
                         <Tab
                             key={id}
                             id={id}

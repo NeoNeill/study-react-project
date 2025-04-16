@@ -6,10 +6,10 @@ const initialState = {
     entities: normalizedDishes.reduce((acc, item) => {
         acc[item.id] = item;
         return acc;
-    }),
+    }, {}),
 };
 
-export const dishedSlice = createSlice({
+export const dishesSlice = createSlice({
     name: "dishes",
     initialState,
     selectors: {
@@ -17,4 +17,4 @@ export const dishedSlice = createSlice({
     },
 });
 
-export const { selectDishesById } = dishedSlice.selectors;
+export const { selectDishesById } = dishesSlice.selectors;

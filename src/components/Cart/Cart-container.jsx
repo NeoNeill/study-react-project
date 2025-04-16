@@ -7,5 +7,6 @@ export const CartContainer = () => {
     if (!itemsIds.length) {
         return null;
     }
+
     return <Cart itemsIds={itemsIds} />;
 };

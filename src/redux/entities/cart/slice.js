@@ -7,11 +7,11 @@ export const cartSlice = createSlice({
         addToCart: (state, { payload }) => {
             state[payload] = (state[payload] || 0) + 1;
         },
-        removeFromCart: () => {
+        removeFromCart: (state, { payload }) => {
             if (!state[payload]) {
                 return state;
             }
-            sstate[payload] = state[payload] - 1;
+            state[payload] = state[payload] - 1;
             if (state[payload] <= 0) {
                 delete state[payload];
             }
