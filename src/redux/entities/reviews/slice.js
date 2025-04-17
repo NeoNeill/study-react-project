@@ -13,8 +13,8 @@ export const reviewsSlice = createSlice({
     name: "reviews",
     initialState,
     selectors: {
-        selectReviewsById: (state, id) => state.entities[id],
+        selectReviewById: (state, id) => state.entities[id],
     },
 });
 
-export const { selectReviewsById } = reviewsSlice.selectors;
+export const { selectReviewById } = reviewsSlice.selectors;

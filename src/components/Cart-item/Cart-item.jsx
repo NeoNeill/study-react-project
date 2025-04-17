@@ -1,7 +1,7 @@
-export const CartItem = ({ amount, dishesName }) => {
+export const CartItem = ({ amount, dishName }) => {
     return (
         <span>
-            {dishesName} - {amount}
+            {dishName} - {amount}
         </span>
     );
 };

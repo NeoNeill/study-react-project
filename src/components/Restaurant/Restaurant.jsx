@@ -11,7 +11,7 @@ export const Restaurant = ({ id, name, menu, reviews }) => {
     return (
         <div className={styles.root}>
             <Menu menusId={menu} />
-            <Reviews id={reviews} />
+            <Reviews ids={reviews} />
             {isAuthorized ? <ReviewForm /> : null}
         </div>
     );
