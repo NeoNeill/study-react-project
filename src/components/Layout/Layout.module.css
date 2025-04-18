@@ -2,10 +2,17 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    
 }
 
 .main {
     display: flex;
-    height: 80vh;
-    padding: 40px 15px;
+    height: 87.5vh;
+    box-sizing: border-box;
+}
+
+.cart {
+    height: auto;
+    padding: 0 15px;
 }

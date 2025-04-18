@@ -1,8 +1,19 @@
 .root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    width: 30%;
+}
+
+.main {
     height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    box-sizing: border-box;
+    padding: 20px;
 }
 .menu {
     display: flex;

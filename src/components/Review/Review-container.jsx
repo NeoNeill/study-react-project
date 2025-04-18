@@ -8,5 +8,10 @@ export const ReviewContainer = ({ id }) => {
     if (!review.text) {
         return null;
     }
-    return <Review text={review.text} userId={review.userId} />;
+
+    return (
+        <>
+            <Review text={review.text} userId={review.userId} />
+        </>
+    );
 };
