@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
-import { Button } from "../Button/Button";
 import { selectRestaurantById } from "../../redux/entities/restaurants/slice";
-import { Link } from "react-router";
+import { TabLink } from "../tab-link/tab-link";
 
 export const RestaurantTab = ({ onClick, isActive, id }) => {
     const restaurant = useSelector((state) => selectRestaurantById(state, id));
@@ -9,16 +8,5 @@ export const RestaurantTab = ({ onClick, isActive, id }) => {
         return null;
     }
     const { name } = restaurant;
-    return (
-        <>
-            <Link to={`/restaurants/${id}`}>
-                <Button
-                    disabled={isActive}
-                    onClick={onClick}
-                    size={"600"}
-                    title={name}
-                />
-            </Link>
-        </>
-    );
+    return <TabLink to={`/restaurants/${id}`}>{name}</TabLink>;
 };

@@ -9,8 +9,9 @@ import { HomePage } from "../../pages/home-page";
 import { RestaurantsPage } from "../../pages/restaurants-page";
 import { RestaurantsMenuPage } from "../../pages/restaurant-menu-page";
 import { RestarauntReviewsPage } from "../../pages/restaurant-reviews-page";
-import "./App.css";
 import { RestarauntDishPage } from "../../pages/restaurant-dish-page";
+import { ChooseRestaurant } from "../Choose-restaurant/Choose-restaurant";
+import "./App.css";
 
 export const App = () => {
     return (
@@ -27,16 +28,7 @@ export const App = () => {
                                 >
                                     <Route
                                         index
-                                        element={
-                                            <div
-                                                style={{
-                                                    display: "flex",
-                                                    justifyContent: "center",
-                                                }}
-                                            >
-                                                <h3>Choose restaurant</h3>
-                                            </div>
-                                        }
+                                        element={<ChooseRestaurant />}
                                     />
                                     <Route
                                         path=":restaurantId"

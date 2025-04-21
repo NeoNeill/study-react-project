@@ -4,6 +4,7 @@ import { Dish } from "./Dish";
 import { DishCounter } from "../Dish-counter/Dish-counter";
 import { AuthContext } from "../Auth-context/Auth-context";
 import { use } from "react";
+import style from "./Dish.module.css";
 
 export const DishContainer = ({ id }) => {
     const dish = useSelector((state) => selectDishById(state, id));
@@ -13,15 +14,9 @@ export const DishContainer = ({ id }) => {
     const { name, price, ingredients } = dish;
     const { auth } = use(AuthContext);
     const { isAuthorized } = auth;
+
     return (
-        <div
-            style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                width: "100%",
-            }}
-        >
+        <div className={style.root}>
             <Dish name={name} price={price} ingredients={ingredients} />
             {isAuthorized ? <DishCounter id={id} /> : null}
         </div>

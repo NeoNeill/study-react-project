@@ -15,9 +15,9 @@ export const Dish = ({ name, ingredients, price }) => {
                 </ul>
             </span>
             <span>Price: {price}</span>
-            <TabLink to={"/restaurants"}>
-                <Button size={"500"} title={"Back to restaurants"} />
-            </TabLink>
+            <span className={style.back}>
+                <TabLink to={"/restaurants"}>Back to restaurants</TabLink>
+            </span>
         </div>
     );
 };
