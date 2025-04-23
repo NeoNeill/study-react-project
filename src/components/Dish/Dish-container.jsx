@@ -1,17 +1,10 @@
-import { useSelector } from "react-redux";
-import { selectDishById } from "../../redux/entities/dishes/slice";
 import { Dish } from "./Dish";
 import { DishCounter } from "../Dish-counter/Dish-counter";
 import { AuthContext } from "../Auth-context/Auth-context";
 import { use } from "react";
 import style from "./Dish.module.css";
 
-export const DishContainer = ({ id }) => {
-    const dish = useSelector((state) => selectDishById(state, id));
-    if (!dish) {
-        return null;
-    }
-    const { name, price, ingredients } = dish;
+export const DishContainer = ({ id, name, price, ingredients }) => {
     const { auth } = use(AuthContext);
     const { isAuthorized } = auth;
 

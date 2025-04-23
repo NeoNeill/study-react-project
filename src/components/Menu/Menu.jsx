@@ -1,16 +1,14 @@
-import { DishCounter } from "../Dish-counter/Dish-counter";
-import { DishTabContainer } from "../Dish-tab/Dish-tab-container";
+import { DishAndCounter } from "../Dish-and-counter/Dish-and-counter";
 import styles from "./Menu.module.css";
 
-export const Menu = ({ ids, isAuthorized }) => {
+export const Menu = ({ menuIds }) => {
     return (
         <div className={styles.root}>
             <h3>Menu</h3>
             <ul className={styles.main}>
-                {ids.map((id) => (
+                {menuIds.map((id) => (
                     <li key={id} className={styles.menu}>
-                        <DishTabContainer id={id} />
-                        {isAuthorized ? <DishCounter id={id} /> : null}
+                        <DishAndCounter id={id} />
                     </li>
                 ))}
             </ul>

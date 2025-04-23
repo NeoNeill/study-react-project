@@ -4,6 +4,7 @@ import { DishTab } from "./Dish-tab";
 
 export const DishTabContainer = ({ id }) => {
     const dish = useSelector((state) => selectDishById(state, id));
+
     if (!dish) {
         return null;
     }
