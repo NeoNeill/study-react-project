@@ -1,18 +1,16 @@
-import { use } from "react";
-import { AuthContext } from "../Auth-context/Auth-context";
-import { Menu } from "../Menu/Menu";
-import { ReviewForm } from "../Review-form/Review-form";
-import { Reviews } from "../Reviews/Reviews";
+import { Tabs } from "../tabs/tabs";
+import { TabLink } from "../tab-link/tab-link";
+import { Outlet } from "react-router";
 import styles from "./Restaurant.module.css";
 
-export const Restaurant = ({ id, name, menu, reviews }) => {
-    const { auth } = use(AuthContext);
-    const { isAuthorized } = auth;
+export const Restaurant = () => {
     return (
-        <div className={styles.root}>
-            <Menu menusId={menu} />
-            <Reviews ids={reviews} />
-            {isAuthorized ? <ReviewForm /> : null}
+        <div className={styles.tab}>
+            <Tabs>
+                <TabLink to={"menu"}>Menu</TabLink>
+                <TabLink to={"reviews"}>Reviews</TabLink>
+            </Tabs>
+            <Outlet />
         </div>
     );
 };

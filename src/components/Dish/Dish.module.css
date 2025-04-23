@@ -1,9 +1,32 @@
 .menu {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    height: 300px;
+    padding: 15px;
 }
 
 .ingredients {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.back {
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    background-color: white;
 }
