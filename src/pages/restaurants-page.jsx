@@ -6,6 +6,10 @@ import { selectRestaurantsIds } from "../redux/entities/restaurants/slice.js";
 import { RestaurantTab } from "../components/RestaurantTab/RestaurantTab.jsx";
 import { useRequest } from "../redux/hooks/use-request.js";
 import styles from "./restaurants-page.module.css";
+import {
+    REQUEST_STATUS_PENDING,
+    REQUEST_STATUS_REJECTED,
+} from "../redux/constants.js";
 
 export const RestaurantsPage = () => {
     const requestStatus = useRequest(getRestaurants);
@@ -22,11 +26,11 @@ export const RestaurantsPage = () => {
         }
     };
 
-    if (requestStatus === "pending") {
+    if (requestStatus === REQUEST_STATUS_PENDING) {
         return "loading...";
     }
 
-    if (requestStatus === "rejected") {
+    if (requestStatus === REQUEST_STATUS_REJECTED) {
         return "ERROR";
     }
 

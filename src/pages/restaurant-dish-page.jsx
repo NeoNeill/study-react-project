@@ -4,30 +4,25 @@ import { useRequest } from "../redux/hooks/use-request";
 import { getDishById } from "../redux/entities/dishes/get-dish-by-id";
 import { useSelector } from "react-redux";
 import { selectDishById } from "../redux/entities/dishes/slice";
+import {
+    REQUEST_STATUS_PENDING,
+    REQUEST_STATUS_REJECTED,
+} from "../redux/constants";
 
 export const RestarauntDishPage = () => {
     const { dishId } = useParams();
 
     const dish = useSelector((state) => selectDishById(state, dishId));
-    if (!dish) {
-        return null;
-    }
+
     const requestStatus = useRequest(getDishById, dishId);
 
-    if (requestStatus === "pending") {
+    if (requestStatus === REQUEST_STATUS_PENDING) {
         return "loading...";
     }
 
-    if (requestStatus === "rejected") {
+    if (requestStatus === REQUEST_STATUS_REJECTED) {
         return "ERROR";
     }
-    const { name, price, id, ingredients } = dish;
-    return (
-        <DishContainer
-            id={id}
-            ingredients={ingredients}
-            price={price}
-            name={name}
-        />
-    );
+
+    return dish ? <DishContainer dish={dish} /> : <div>empty dish</div>;
 };

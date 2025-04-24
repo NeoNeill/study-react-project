@@ -4,6 +4,10 @@ import { useSelector } from "react-redux";
 import { selectRestaurantById } from "../redux/entities/restaurants/slice";
 import { useRequest } from "../redux/hooks/use-request";
 import { getReviewsByRestaurantId } from "../redux/entities/reviews/get-reviews-by-restaraunt-id";
+import {
+    REQUEST_STATUS_PENDING,
+    REQUEST_STATUS_REJECTED,
+} from "../redux/constants";
 
 export const RestarauntReviewsPage = () => {
     const { restaurantId } = useParams();
@@ -14,11 +18,11 @@ export const RestarauntReviewsPage = () => {
 
     const { reviews } = restaurant || {};
 
-    if (requestStatus === "pending") {
+    if (requestStatus === REQUEST_STATUS_PENDING) {
         return "loading...";
     }
 
-    if (requestStatus === "rejected") {
+    if (requestStatus === REQUEST_STATUS_REJECTED) {
         return "ERROR";
     }
     return reviews ? <Reviews ids={reviews} /> : <div>empty review</div>;

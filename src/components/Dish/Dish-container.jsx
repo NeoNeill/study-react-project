@@ -4,10 +4,10 @@ import { AuthContext } from "../Auth-context/Auth-context";
 import { use } from "react";
 import style from "./Dish.module.css";
 
-export const DishContainer = ({ id, name, price, ingredients }) => {
+export const DishContainer = ({ dish }) => {
     const { auth } = use(AuthContext);
     const { isAuthorized } = auth;
-
+    const { name, price, id, ingredients } = dish || {};
     return (
         <div className={style.root}>
             <Dish name={name} price={price} ingredients={ingredients} />
