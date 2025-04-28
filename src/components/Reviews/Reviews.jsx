@@ -7,6 +7,7 @@ import { ReviewForm } from "../Review-form/Review-form";
 export const Reviews = ({ ids }) => {
     const { auth } = use(AuthContext);
     const { isAuthorized } = auth;
+
     return (
         <>
             <h3>Reviews</h3>

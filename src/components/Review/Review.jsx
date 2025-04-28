@@ -1,9 +1,9 @@
 import { UserContainer } from "../User/User-container";
 
-export const Review = ({ text, userId }) => {
+export const Review = ({ text, rating, userId }) => {
     return (
         <>
-            {text} - <UserContainer id={userId} />
+            {rating} {text} - <UserContainer id={userId} />
         </>
     );
 };
