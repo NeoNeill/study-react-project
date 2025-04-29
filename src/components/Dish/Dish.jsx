@@ -1,20 +1,25 @@
-import { Button } from "../Button/Button";
+import { DishCounter } from "../Dish-counter/Dish-counter";
 import { TabLink } from "../tab-link/tab-link";
 import style from "./Dish.module.css";
 
-export const Dish = ({ name, ingredients, price }) => {
+export const Dish = ({ data, isAuthorized }) => {
     return (
         <div className={style.menu}>
-            <span>{name}</span>
             <span className={style.ingredients}>
                 Ingredients:
                 <ul>
-                    {ingredients.map((item) => (
-                        <li key={item}>{item}</li>
+                    {data.map(({ id, name, price, ingredients }) => (
+                        <>
+                            <li key={id}>
+                                {name}
+                                {ingredients}
+                            </li>
+                            <span>Price: {price}</span>
+                            {isAuthorized ? <DishCounter id={id} /> : null}
+                        </>
                     ))}
                 </ul>
             </span>
-            <span>Price: {price}</span>
             <span className={style.back}>
                 <TabLink to={"/restaurants"}>Back to restaurants</TabLink>
             </span>

@@ -1,7 +1,7 @@
 import { DishAndCounter } from "../Dish-and-counter/Dish-and-counter";
 import styles from "./Menu.module.css";
 
-export const Menu = ({ menuIds }) => {
+export const Menu = ({ restaurantId }) => {
     return (
         <div className={styles.root}>
             <h3>Menu</h3>
