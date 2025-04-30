@@ -1,15 +1,14 @@
 import { Dish } from "./Dish";
-import { DishCounter } from "../Dish-counter/Dish-counter";
 import { AuthContext } from "../Auth-context/Auth-context";
 import { use } from "react";
 import style from "./Dish.module.css";
-import { useGetDishesByRestaurantIdQuery } from "../../redux/services/api";
+import { useGetDishByIdQuery } from "../../redux/services/api";
 
 export const DishContainer = ({ dishId }) => {
     const { auth } = use(AuthContext);
     const { isAuthorized } = auth;
 
-    const { data, isLoading } = useGetDishesByRestaurantIdQuery(dishId);
+    const { data, isLoading } = useGetDishByIdQuery(dishId);
 
     if (isLoading) {
         return "Loading...";
@@ -18,10 +17,16 @@ export const DishContainer = ({ dishId }) => {
     if (!data) {
         return null;
     }
-
+    const { name, price, ingredients, id } = data;
     return (
         <div className={style.root}>
-            <Dish data={data} isAuthorized={isAuthorized} />
+            <Dish
+                ingredients={ingredients}
+                price={price}
+                name={name}
+                id={id}
+                isAuthorized={isAuthorized}
+            />
         </div>
     );
 };

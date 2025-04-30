@@ -8,7 +8,11 @@ export const AuthContextProvider = ({ children }) => {
         setAuth((prev) => {
             return prev.isAuthorized
                 ? { isAuthorized: false }
-                : { isAuthorized: true, name: "User" };
+                : {
+                      isAuthorized: true,
+                      userName: "Elli",
+                      userId: "1547500a-er16-4440-a83d-91bd4e9d651c",
+                  };
         });
     };
     return <AuthContext value={{ auth, toggleAuth }}>{children}</AuthContext>;

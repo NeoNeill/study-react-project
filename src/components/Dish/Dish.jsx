@@ -2,22 +2,18 @@ import { DishCounter } from "../Dish-counter/Dish-counter";
 import { TabLink } from "../tab-link/tab-link";
 import style from "./Dish.module.css";
 
-export const Dish = ({ data, isAuthorized }) => {
+export const Dish = ({ name, price, ingredients, isAuthorized, id }) => {
     return (
         <div className={style.menu}>
+            {name}
             <span className={style.ingredients}>
                 Ingredients:
                 <ul>
-                    {data.map(({ id, name, price, ingredients }) => (
-                        <>
-                            <li key={id}>
-                                {name}
-                                {ingredients}
-                            </li>
-                            <span>Price: {price}</span>
-                            {isAuthorized ? <DishCounter id={id} /> : null}
-                        </>
-                    ))}
+                    {ingredients.map((item) => {
+                        return <li key={item}>{item}</li>;
+                    })}
+                    <span>Price: {price}</span>
+                    {isAuthorized ? <DishCounter id={id} /> : null}
                 </ul>
             </span>
             <span className={style.back}>

@@ -1,14 +1,15 @@
-import { useSelector } from "react-redux";
-import { selectDishById } from "../../redux/entities/dishes/slice";
 import { DishTab } from "./Dish-tab";
+import { useGetDishByIdQuery } from "../../redux/services/api";
 
-export const DishTabContainer = ({ id }) => {
-    const dish = useSelector((state) => selectDishById(state, id));
+export const DishTabContainer = ({ dishId }) => {
+    const { data, isLoading } = useGetDishByIdQuery(dishId);
+    if (isLoading) {
+        return "Loading...";
+    }
 
-    if (!dish) {
+    if (!data) {
         return null;
     }
-    const { name } = dish;
 
-    return <DishTab name={name} id={id} />;
+    return <DishTab name={data.name} id={data.id} />;
 };
