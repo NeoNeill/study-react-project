@@ -4,7 +4,7 @@ import { ReviewContainer } from "../Review/Review-container";
 import styles from "./Reviews.module.css";
 import { ReviewForm } from "../Review-form/Review-form";
 
-export const Reviews = ({ ids }) => {
+export const Reviews = ({ reviews, onAddReview, isSubmitButtonDisabled }) => {
     const { auth } = use(AuthContext);
     const { isAuthorized } = auth;
 
@@ -12,13 +12,18 @@ export const Reviews = ({ ids }) => {
         <>
             <h3>Reviews</h3>
             <ul className={styles.reviews}>
-                {ids.map((reviewId) => (
-                    <li key={reviewId}>
-                        <ReviewContainer id={reviewId} />
+                {reviews.map(({ id, text, userId }) => (
+                    <li key={id}>
+                        <ReviewContainer userId={userId} text={text} />
                     </li>
                 ))}
             </ul>
-            {isAuthorized ? <ReviewForm /> : null}
+            {isAuthorized ? (
+                <ReviewForm
+                    onSubmit={onAddReview}
+                    isSubmitButtonDisabled={isSubmitButtonDisabled}
+                />
+            ) : null}
         </>
     );
 };
